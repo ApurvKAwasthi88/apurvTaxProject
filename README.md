@@ -5,8 +5,8 @@ The TaxOrchestrator is the main class for the api. It computes taxes and generat
 We are loading the tax rates and loading it to the cache(when the system loads). The cache gets loaded from the property file(tax.prop) in current implementation, this can be changed to load it from the database from a metadata table that stores Item category and its tax rate.
 Guava cache is used in the implementation in TaxRepo thath helps us handle various scenario, for example  if there is a cache miss it tries to load it from the datasorce so this can be helpful in the use cases of when we add new tax rates for new items (kind of write aside startegy). We can also have an eviction policy by which the category get's evicited after particular time and the cahce loads it from the datasource this will be helpfull when we update some of the tax rate from the backend for particular category (when there is revision of tax rates).
 
-Additionaly we have a additionalTax.prop that is loaded into add on cache, this can again be changed to load it from a metadata table.
-The cache impl used here is Guava Cahche. From the implementation standpoint we check if the item has some add on tax and ifPresent we add this value to the tax computation. This is also configurable and item category can be added to this property.
+Additionaly we have a additionalTax.prop that is loaded into cache, this can again be changed to load it from a metadata table from database.
+The cache impl used here is Guava Cahche. From the implementation standpoint we check if the item has some add on tax and ifPresent we add this value to the tax computation. This is also configurable and item category can be added to thie datasorce on the fly
 
 
 

@@ -15,7 +15,7 @@ import java.util.Scanner;
 /**
  * Created with IntelliJ IDEA.
  * User: apurv
-  * ProcessFile class is resposible to load the txt file which has sample data and return Items
+  * ProcessFile class is responsible  to load the txt file which has sample data and return Items
  * This class is mocked  in test cases to test various scenario.
  */
 public class ProcessFile

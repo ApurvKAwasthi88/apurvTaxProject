@@ -11,10 +11,8 @@ import java.util.concurrent.ExecutionException;
 
 /**
  * Created with IntelliJ IDEA.
- * User: HP
- * Date: 5/4/18
- * Time: 1:35 AM
- * To change this template use File | Settings | File Templates.
+ *   User: apurv
+ * * Tax Processing and Recipt generation as per US Tax implementation
  */
 public class USTaxBusinessImpl implements TaxBusiness
 {

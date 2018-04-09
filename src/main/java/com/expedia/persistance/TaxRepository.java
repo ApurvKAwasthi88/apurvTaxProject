@@ -7,9 +7,7 @@ import java.util.concurrent.ExecutionException;
 /**
  * Created with IntelliJ IDEA.
  * User: apurv
- * Date: 5/4/18
- * Time: 1:24 AM
- * The intent of the class is to Talk to a data scource and load the Tax based on tax types.
+ * The intent of the class is to Talk to a data source and load the Tax based on tax types.
  */
 public interface TaxRepository
 {

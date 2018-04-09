@@ -7,10 +7,8 @@ import com.expedia.domain.TaxableCountry;
 
 /**
  * Created with IntelliJ IDEA.
- * User: HP
- * Date: 8/4/18
- * Time: 10:32 PM
- * To change this template use File | Settings | File Templates.
+ * User: apurv
+  * TaxFactory returns Tax Business based on county
  */
 public class TaxFactory
 {

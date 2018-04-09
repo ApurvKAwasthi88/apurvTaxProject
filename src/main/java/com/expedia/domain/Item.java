@@ -4,10 +4,9 @@ import java.math.BigDecimal;
 
 /**
  * Created with IntelliJ IDEA.
- * User: apurv
- * Date: 1/4/18
- * Time: 9:35 PM
+ *  User: apurv
  * To change this template use File | Settings | File Templates.
+ * Item class is holds the item information post processing the price with Tax is updated
  */
 public class Item
 {

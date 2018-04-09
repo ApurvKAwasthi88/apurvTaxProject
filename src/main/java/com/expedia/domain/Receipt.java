@@ -6,9 +6,8 @@ import java.util.List;
 /**
  * Created with IntelliJ IDEA.
  * User: apurv
- * Date: 4/4/18
- * Time: 12:10 AM
- * To change this template use File | Settings | File Templates.
+ *
+ * Recipt class holds items, total Tax and total price for the given list of Items
  */
 public class Receipt
 {

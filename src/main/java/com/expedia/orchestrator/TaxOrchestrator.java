@@ -13,9 +13,7 @@ import java.util.List;
 /**
  * Created with IntelliJ IDEA.
  * User: apurv
- * Date: 3/4/18
- * Time: 2:02 AM
- * TaxOrchestrator is the main class the talks to the business layer computes tax and generates Recipt
+ *  TaxOrchestrator is the main class the talks to the business layer computes tax and generates Recipt
  */
 public class TaxOrchestrator
 {

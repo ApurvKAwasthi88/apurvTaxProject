@@ -7,13 +7,13 @@ import java.util.List;
 
 /**
  * Created with IntelliJ IDEA.
- *
- * India Based Tax Impl
+ *   User: apurv
+ * India Based Tax Impl, code is open for extension
  */
 public class IndiaTaxBusinessImpl implements TaxBusiness {
 
     @Override
     public Receipt processTaxGenerateRecepit(List<Item> items) {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+        return null;
     }
 }

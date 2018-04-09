@@ -11,7 +11,7 @@ import java.util.Properties;
 /**
  * Created with IntelliJ IDEA.
  * User: apurv
- *  TaxUtils is utillity class which helps the business to calucet tax andd helps the repo to load data
+ *  TaxUtils is utility class which helps the business to compute percentage  and helps the repo to load data
  */
 public class TaxUtils
 {
@@ -19,11 +19,11 @@ public class TaxUtils
     private static final String TAX_PROPERTY_FILE_NAME ="tax.properties";
     private static final String ADDITIONAL_TAX_PROPERTY_FILE_NAME ="additionalTax.properties";
     private static final String PERCENTAGE ="100";
+    private static final String DEFAULT_TAX_RATE_PROP ="DEFAULT_TAX_RATE";
+    private static final String ADDITIONAL_DEFAULT_TAX_RATE ="ADDITIONAL_DEFAULT_TAX_RATE";
     private static  BigDecimal ROUNDING;
     private static Properties properties;
     private static Properties additionalTaxProperties;
-    private static final String DEFAULT_TAX_RATE_PROP ="DEFAULT_TAX_RATE";
-    private static final String ADDITIONAL_DEFAULT_TAX_RATE ="ADDITIONAL_DEFAULT_TAX_RATE";
 
     static
     {
@@ -34,6 +34,7 @@ public class TaxUtils
 
 
         } catch (IOException e) {
+            System.out.println("IO Exception occured while loading Tax Rates");
             e.printStackTrace();
         }
 

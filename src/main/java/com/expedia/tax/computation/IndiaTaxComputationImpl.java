@@ -7,10 +7,8 @@ import java.util.concurrent.ExecutionException;
 
 /**
  * Created with IntelliJ IDEA.
- * User: HP
- * Date: 8/4/18
- * Time: 10:40 PM
- * To change this template use File | Settings | File Templates.
+ * User: apurv
+ * IndianTaxImpl can be implemented for calculating Tax for India
  */
 public class IndiaTaxComputationImpl implements TaxComputatation {
     @Override

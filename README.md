@@ -24,3 +24,10 @@ Tool Used : InteliJ
 
 Please note: There are some defualt implementation that are empty and are created from the extensibility prespective. Hecne in some of the packages the coverage is low
 
+## Integration and Unit Testing
+Intgerationa test cases are writen based on the sample input provided for the problem statement.
+Mockito is used to mock the Item List for Integration test cases
+Unit test cases are written to Unit test Business classes from tax computation, totatl tax, total price standpoint
+Test cases with special scenarios e.g Music (additional tax) Medical No Tax are tested.
+
+

@@ -7,7 +7,7 @@ import java.util.List;
  * Created with IntelliJ IDEA.
  * User: apurv
  *
- * Recipt class holds items, total Tax and total price for the given list of Items
+ * Receipt class holds items, total Tax and total price for the given list of Items
  */
 public class Receipt
 {

@@ -7,10 +7,9 @@ import java.util.concurrent.ExecutionException;
 
 /**
  * Created with IntelliJ IDEA.
- * User: HP
- * Date: 3/4/18
- * Time: 2:06 AM
- * To change this template use File | Settings | File Templates.
+ * User: apurv
+ *
+  * The contract is resposible for computation of Tax per item
  */
 public interface TaxComputatation
 {

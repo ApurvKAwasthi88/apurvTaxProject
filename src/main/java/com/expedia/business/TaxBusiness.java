@@ -10,7 +10,7 @@ import java.util.concurrent.ExecutionException;
 /**
  * Created with IntelliJ IDEA.
  * User: apurv
- *  The contract is responsible for processing Tax an Generating Recipt
+ *  The contract is responsible for processing Tax an Generating Receipt
  */
 public interface TaxBusiness
 {

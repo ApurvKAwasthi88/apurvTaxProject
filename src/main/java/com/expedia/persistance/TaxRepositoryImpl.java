@@ -25,6 +25,7 @@ public class TaxRepositoryImpl implements TaxRepository {
 
     private LoadingCache<String, BigDecimal> taxRulesCache;
     private LoadingCache<String, BigDecimal> additionalTaxRate;
+    private LoadingCache<String, BigDecimal> discountTaxRate;
     public  TaxRepositoryImpl() {
 
         buildCache();
@@ -53,7 +54,19 @@ public class TaxRepositoryImpl implements TaxRepository {
                             return getAddOnTaxRate(taxRules).get();
                         }
                     });
+
+        discountTaxRate=    CacheBuilder.newBuilder()
+                .build(new CacheLoader<String, BigDecimal>() {
+                    @Override
+                    public BigDecimal load(String taxRules) throws Exception {
+                        return
+                                getDiscountTaxRateByItem(taxRules).isPresent()?
+                                        getDiscountTaxRateByItem(taxRules).get():new BigDecimal("0.0");
+                    }
+                });
+
     }
+
 
         @Override
     public BigDecimal findTaxByItemType(String itemType) throws ExecutionException {
@@ -69,17 +82,28 @@ public class TaxRepositoryImpl implements TaxRepository {
         return bigDecimalOptional;
     }
 
-
-    private  BigDecimal getTaxRate(String taxTYPES)
-    {
-        return TaxUtils.getTaxForType(taxTYPES);
+    @Override
+    public Optional<BigDecimal> findDiscountTaxByItemType(String itemType) throws ExecutionException {
+        return Optional.of(this.discountTaxRate.get(itemType));
     }
 
 
-    private  Optional<BigDecimal> getAddOnTaxRate(String taxTYPES)
+    private  BigDecimal getTaxRate(String itemType)
     {
-        return TaxUtils.getAddOnTaxByType(taxTYPES);
+        return TaxUtils.getTaxForType(itemType);
     }
+
+
+    private  Optional<BigDecimal> getAddOnTaxRate(String itemType)
+    {
+        return TaxUtils.getAddOnTaxByType(itemType);
+    }
+    private  Optional<BigDecimal> getDiscountTaxRateByItem(String itemType)
+    {
+        return TaxUtils.getDiscountTaxByType(itemType);
+    }
+
+
 
     private void loadTaxRates()  {
 

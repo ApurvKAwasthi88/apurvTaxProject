@@ -11,9 +11,10 @@ import java.util.concurrent.ExecutionException;
  *
  * IndianTaxImpl can be implemented for calculating Tax for India
  */
-public class IndiaTaxComputationImpl implements TaxComputatation {
+public class IndiaTaxComputationImpl implements TaxComputation {
     @Override
     public BigDecimal computeTax(Item item) throws ExecutionException {
-        return null;  //To change body of implemented methods use File | Settings | File Templates.
+
+        return null;
     }
 }

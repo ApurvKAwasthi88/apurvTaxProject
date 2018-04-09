@@ -30,7 +30,7 @@ public class TaxOrchestrator
     {
         List<Item> itemList = this.processFile.processFile(TEST_FILE_NAME);
         TaxBusiness taxBusiness = TaxFactory.getTaxationByCountry(TaxableCountry.US);
-        Receipt receipt= taxBusiness.processTaxGenerateRecepit(itemList);
+        Receipt receipt= taxBusiness.processTaxGenerateReceipt(itemList);
         return receipt;
     }
 
@@ -38,7 +38,7 @@ public class TaxOrchestrator
         ProcessFile processFile  = new ProcessFile();
         List<Item> itemList = processFile.processFile(TEST_FILE_NAME);
         TaxBusiness taxBusiness = new USTaxBusinessImpl();
-        Receipt receipt= taxBusiness.processTaxGenerateRecepit(itemList);
+        Receipt receipt= taxBusiness.processTaxGenerateReceipt(itemList);
 
         for(Item eachItem: receipt.getItems())
         {

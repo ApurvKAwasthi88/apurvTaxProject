@@ -15,7 +15,7 @@ import java.util.concurrent.ExecutionException;
  *
  * USTaxComputationImpl interacts with Tax repo finds the tax rate and computes the tax.
  */
-public class USTaxComputationImpl implements TaxComputatation {
+public class USTaxComputationImpl implements TaxComputation {
 
 
     private TaxRepository taxRepository;
@@ -33,14 +33,17 @@ public class USTaxComputationImpl implements TaxComputatation {
 
         BigDecimal taxRate = this.taxRepository.findTaxByItemType(item.getItemType());
         Optional<BigDecimal> addOnTax = this.taxRepository.findAddOnTaxByItemType(item.getItemType());
+        Optional<BigDecimal> discountOnTax = this.taxRepository.findDiscountTaxByItemType(item.getItemType());
         BigDecimal taxComputed = TaxUtils.calculatePercentageAndRound(actualPrice, taxRate);
         if(addOnTax.isPresent())
         {
             taxComputed = taxComputed.add(addOnTax.get());
         }
+        if(discountOnTax.isPresent())
+        {
+            taxComputed = taxComputed.subtract(discountOnTax.get());
 
-
-
+        }
         return taxComputed;
     }
 }

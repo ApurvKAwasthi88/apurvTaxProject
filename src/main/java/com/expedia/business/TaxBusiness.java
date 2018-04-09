@@ -15,6 +15,6 @@ import java.util.concurrent.ExecutionException;
 public interface TaxBusiness
 {
 
-    public Receipt processTaxGenerateRecepit(List<Item> items);
+    public Receipt processTaxGenerateReceipt(List<Item> items);
 
 }

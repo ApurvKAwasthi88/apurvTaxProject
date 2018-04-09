@@ -14,7 +14,7 @@ import java.util.List;
 public class IndiaTaxBusinessImpl implements TaxBusiness {
 
     @Override
-    public Receipt processTaxGenerateRecepit(List<Item> items) {
+    public Receipt processTaxGenerateReceipt(List<Item> items) {
         return null;
     }
 }

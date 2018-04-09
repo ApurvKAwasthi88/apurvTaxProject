@@ -15,5 +15,6 @@ public interface TaxRepository
 
     public BigDecimal findTaxByItemType(String itemType) throws ExecutionException;
     public Optional<BigDecimal> findAddOnTaxByItemType(String itemType) throws ExecutionException;
+    public Optional<BigDecimal> findDiscountTaxByItemType(String itemType) throws ExecutionException;
 
 }

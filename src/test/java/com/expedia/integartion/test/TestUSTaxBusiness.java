@@ -31,7 +31,7 @@ public class TestUSTaxBusiness
   }
 
   @Test
-  public void testMultipleItems()
+  public void testMultipleDifferentItems()
   {
 
       List<Item> itemList =new ArrayList<>();
@@ -40,7 +40,7 @@ public class TestUSTaxBusiness
 
       this.taxBusiness = new USTaxBusinessImpl();
       Receipt receipt =
-              taxBusiness.processTaxGenerateRecepit(itemList);
+              taxBusiness.processTaxGenerateReceipt(itemList);
 
 
       assertEquals( receipt.getTotalPrice().toString(), new BigDecimal("108.16").toString());
@@ -67,7 +67,7 @@ public class TestUSTaxBusiness
         itemList.add(new Item("MEDICAL",1,new BigDecimal("5.75")));
 
         Receipt receipt =
-                taxBusiness.processTaxGenerateRecepit(itemList);
+                taxBusiness.processTaxGenerateReceipt(itemList);
         assertEquals( receipt.getTotalPrice().toString(), new BigDecimal("78.71").toString());
         assertEquals( receipt.getTotalTax().toString(), new BigDecimal("0.00").toString());
         assertEquals("Size Of Items",receipt.getItems().size(),3);
@@ -96,7 +96,7 @@ public class TestUSTaxBusiness
         itemList.add(new Item("CD",2,new BigDecimal("15.99")));
         itemList.add(new Item("CD",1,new BigDecimal("10.75")));
         Receipt receipt =
-                taxBusiness.processTaxGenerateRecepit(itemList);
+                taxBusiness.processTaxGenerateReceipt(itemList);
         assertEquals( receipt.getTotalPrice().toString(), new BigDecimal("123.31").toString());
         assertEquals( receipt.getTotalTax().toString(), new BigDecimal("21.60").toString());
         assertEquals("Size Of Items",receipt.getItems().size(),3);

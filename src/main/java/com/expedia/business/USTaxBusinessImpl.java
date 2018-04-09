@@ -2,7 +2,7 @@ package com.expedia.business;
 
 import com.expedia.domain.Item;
 import com.expedia.domain.Receipt;
-import com.expedia.tax.computation.TaxComputatation;
+import com.expedia.tax.computation.TaxComputation;
 import com.expedia.tax.computation.USTaxComputationImpl;
 
 import java.math.BigDecimal;
@@ -13,22 +13,22 @@ import java.util.concurrent.ExecutionException;
  * Created with IntelliJ IDEA.
  *   User: apurv
  *
- * * Tax Processing and Recipt generation as per US Tax implementation
+ * * Tax Processing and Receipt generation as per US Tax implementation
  */
 public class USTaxBusinessImpl implements TaxBusiness
 {
 
-    private TaxComputatation taxComputatation ;
+    private TaxComputation taxComputation;
 
     private static final String DEFAULT= "0";
 
     public USTaxBusinessImpl()
     {
-        this.taxComputatation = new USTaxComputationImpl();
+        this.taxComputation = new USTaxComputationImpl();
     }
 
     @Override
-    public Receipt processTaxGenerateRecepit(List<Item> items)
+    public Receipt processTaxGenerateReceipt(List<Item> items)
     {
 
         Receipt receipt = new Receipt();
@@ -41,7 +41,7 @@ public class USTaxBusinessImpl implements TaxBusiness
             for(Item eachItem : items)
             {
                 BigDecimal taxComputed =
-                        this.taxComputatation.computeTax(eachItem);
+                        this.taxComputation.computeTax(eachItem);
                 taxComputed = taxComputed.setScale(2,BigDecimal.ROUND_UP);
                 eachItem.setPriceWithTax(taxComputed);
                 totalTax= totalTax.add(taxComputed);
